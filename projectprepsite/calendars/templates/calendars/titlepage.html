@@ -34,9 +34,11 @@
     font-size: 24px;
     margin: 4px 2px;
     cursor: pointer;
+    transition-duration: 0.4s;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-  .button {background-color: #a4c2f4ff;}
+  .button {background-color: #a4c2f4ff; border:2px solid #1c4587}
+  .button:hover {background-color: rgb(214, 226, 247)}
 </style>
 
 <header>
@@ -51,7 +53,7 @@
 <article>
   <p>On this website, you can create a teacher supervision schedule based on the information you enter.</p>
   <p>Click <b>"Start"</b> to begin the process.</p>
-  <button class="button button1" onclick="alert('Hello')">START</button>
+  <button class="button button1" onclick="window.location.href='uploadfile';">START</button>
 </article>
 
 
