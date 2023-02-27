@@ -6,3 +6,5 @@ def titlePage(request):
     return render(request, 'calendars/titlepage.html')
 def uploadFile(request):
     return render(request, 'calendars/uploadfile.html')
+def upload(request):
+    return render(request, 'calendars/upload.html')
