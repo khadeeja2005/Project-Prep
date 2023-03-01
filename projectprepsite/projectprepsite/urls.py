@@ -21,4 +21,5 @@ urlpatterns = [
     path('calendars/', include('calendars.urls')),
     path('uploadfile/', include('calendars.urls')),
     path('upload/', include('calendars.urls')),
+    path('upload/', include('calendars.urls')),
 ]

@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 import logging
 from django.contrib import messages
+from django import forms
+from calendars.forms import EventsForm
 
 # Create your views here.
 def titlePage(request):
@@ -28,30 +30,25 @@ def upload_csv(request):
         file_data = csv_file.read().decode("utf-8")		
 
         lines = file_data.split("\n")
-        #loop over the lines and save them in db. If error , store as string and then display
-        for line in lines:
-            fields = line.split(",")
-            data_dict = {}
-            data_dict["name"] = fields[0]
-            data_dict["start_date_time"] = fields[1]
-            data_dict["end_date_time"] = fields[2]
-            data_dict["notes"] = fields[3]
             try:
-                form = EventsForm(data_dict)
+                form = EventsForm()
                 if form.is_valid():
-                    form.save()					
+                    form.save()
+                    handle_uploaded_file(csv_file)			
                 else:
                     logging.getLogger("error_logger").error(form.errors.as_json())												
             except Exception as e:
                 logging.getLogger("error_logger").error(repr(e))					
                 pass
-        
-        f_write = open('C:/Users/DELL/Documents/Github/Project-Prep/projectprepsite/data.csv')
-        f_write.write(form)
-        f_write.close()
 
     except Exception as e:
         logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
         messages.error(request,"Unable to upload file. "+repr(e))
 
-    return HttpResponseRedirect(reverse("calendars:upload"))
+    return render(request, 'calendars/upload.html')
+def handle_uploaded_file(f):
+    with open('calendars/upload'+csv_file.name, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+def uploadSuccess(request):
+    return render(request, 'calendars/uploadsuccess.html')
