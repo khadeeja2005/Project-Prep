@@ -30,16 +30,16 @@ def upload_csv(request):
         file_data = csv_file.read().decode("utf-8")		
 
         lines = file_data.split("\n")
-            try:
-                form = EventsForm()
-                if form.is_valid():
-                    form.save()
-                    handle_uploaded_file(csv_file)			
-                else:
-                    logging.getLogger("error_logger").error(form.errors.as_json())												
-            except Exception as e:
-                logging.getLogger("error_logger").error(repr(e))					
-                pass
+        try:
+            form = EventsForm()
+            if form.is_valid():
+                form.save()
+                handle_uploaded_file(csv_file)			
+            else:
+                logging.getLogger("error_logger").error(form.errors.as_json())												
+        except Exception as e:
+            logging.getLogger("error_logger").error(repr(e))					
+            pass
 
     except Exception as e:
         logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
