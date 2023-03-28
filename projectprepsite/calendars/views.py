@@ -5,7 +5,7 @@ from django.urls import reverse
 import logging
 from django.contrib import messages
 from django import forms
-from calendars.models import Document
+from calendars.models import CSV_FILE
 from calendars.forms import DocumentForm
 
 # Create your views here.
@@ -16,19 +16,21 @@ def uploadFile(request):
 def upload_csv(request):
     # Handle file upload
     if request.method == 'GET':
-        form = DocumentForm(request.GET, request.FILES)
-        if form.is_valid():
-            newdoc = Document(docfile = request.FILES['docfile'])
-            newdoc.save()
+        file = CSV_FILE(names=names, prep_times=prep_times, locations=locations)
+        if file.is_valid():
+            file.save()
 
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('list'))
 
         else:
-            form = DocumentForm() # A empty, unbound form
+            file = CSV_FILE() # A empty, unbound form
 
     # Load documents for the list page
-    documents = Document.objects.all()
+    entries = CSV_FILE.objects.all()
+
+    for i in file in entries:
+        print(i)
 
 
     # Render list page with the documents and the form
