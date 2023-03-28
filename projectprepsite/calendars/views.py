@@ -15,6 +15,23 @@ def uploadFile(request):
 def upload_csv(request):
     data = {}
     if "GET" == request.method:
+
+        file = CSV_FILE(names=names, prep_times=prep_times, locations=locations)
+        if file.is_valid():
+            file.save()
+
+            # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse('list'))
+
+        else:
+            file = CSV_FILE() # A empty, unbound form
+
+        # Load documents for the list page
+        entries = CSV_FILE.objects.all()
+
+        for i in file in entries:
+            print(i)
+
         return render(request, "calendars/upload.html", data)
     # if not GET, then proceed
     try:
@@ -26,24 +43,6 @@ def upload_csv(request):
         if csv_file.multiple_chunks():
             messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
             return HttpResponseRedirect(reverse("calendars:upload"))
-
-        file_data = csv_file.read().decode("utf-8")		
-
-        lines = file_data.split("\n")
-        try:
-            form = EventsForm()
-            if form.is_valid():
-                form.save()
-                handle_uploaded_file(csv_file)			
-            else:
-                logging.getLogger("error_logger").error(form.errors.as_json())												
-        except Exception as e:
-            logging.getLogger("error_logger").error(repr(e))					
-            pass
-
-    except Exception as e:
-        logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
-        messages.error(request,"Unable to upload file. "+repr(e))
 
     return render(request, 'calendars/upload.html')
 def handle_uploaded_file(f):
