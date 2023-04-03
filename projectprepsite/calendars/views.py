@@ -6,6 +6,7 @@ import logging
 from django.contrib import messages
 from django import forms
 from calendars.forms import EventsForm
+from calendars.models import CSV_FILE
 
 # Create your views here.
 def titlePage(request):
@@ -15,7 +16,18 @@ def uploadFile(request):
 def upload_csv(request):
     data = {}
     if "GET" == request.method:
-        return render(request, "calendars/upload.html", data)
+
+        file = CSV_FILE(names="names", prep_times="prep_times", locations="locations")
+        file.save()
+    
+    entries = CSV_FILE.objects.all()
+
+    for i in file in entries:
+        print(i)
+
+    if "GET" == request.method:
+        return render(request, "calendars/upload.html", entries)
+    
     # if not GET, then proceed
     try:
         csv_file = request.FILES["csv_file"]
