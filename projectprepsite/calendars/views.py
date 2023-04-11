@@ -6,6 +6,8 @@ import logging
 from django.contrib import messages
 from django import forms
 from calendars.forms import EventsForm
+from calendars.models import CSV_FILE
+from calendars.forms import CSV_FILE_FORM
 
 # Create your views here.
 def titlePage(request):
@@ -13,9 +15,14 @@ def titlePage(request):
 def uploadFile(request):
     return render(request, 'calendars/uploadfile.html')
 def upload_csv(request):
-    data = {}
     if "GET" == request.method:
-        return render(request, "calendars/upload.html", data)
+        file = CSV_FILE_FORM(request.POST, request.FILES)
+        if file.is_valid():
+            file.save()
+        return render(request, "calendars/upload.html")
+    elif "POST" == request.method:
+        return render(request, "calendars/uploadsuccess.html")
+    
     # if not GET, then proceed
     try:
         csv_file = request.FILES["csv_file"]
@@ -26,20 +33,6 @@ def upload_csv(request):
         if csv_file.multiple_chunks():
             messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
             return HttpResponseRedirect(reverse("calendars:upload"))
-
-        file_data = csv_file.read().decode("utf-8")		
-
-        lines = file_data.split("\n")
-        try:
-            form = EventsForm()
-            if form.is_valid():
-                form.save()
-                handle_uploaded_file(csv_file)			
-            else:
-                logging.getLogger("error_logger").error(form.errors.as_json())												
-        except Exception as e:
-            logging.getLogger("error_logger").error(repr(e))					
-            pass
 
     except Exception as e:
         logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
