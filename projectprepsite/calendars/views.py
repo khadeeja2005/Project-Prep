@@ -19,24 +19,11 @@ def upload_csv(request):
         file = CSV_FILE_FORM(request.POST, request.FILES)
         if file.is_valid():
             file.save()
-        return render(request, "calendars/upload.html")
+        # return render(request, "calendars/upload.html")
     elif "POST" == request.method:
         return render(request, "calendars/uploadsuccess.html")
     
     # if not GET, then proceed
-    try:
-        csv_file = request.FILES["csv_file"]
-        if not csv_file.name.endswith('.csv'):
-            messages.error(request,'File is not CSV type')
-            return HttpResponseRedirect(reverse("calendars:upload"))
-        #if file is too large, return
-        if csv_file.multiple_chunks():
-            messages.error(request,"Uploaded file is too big (%.2f MB)." % (csv_file.size/(1000*1000),))
-            return HttpResponseRedirect(reverse("calendars:upload"))
-
-    except Exception as e:
-        logging.getLogger("error_logger").error("Unable to upload file. "+repr(e))
-        messages.error(request,"Unable to upload file. "+repr(e))
 
     return render(request, 'calendars/upload.html')
 def handle_uploaded_file(f):

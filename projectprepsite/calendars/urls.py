@@ -4,8 +4,8 @@ from . import views
 app_name = "calendars"
 
 urlpatterns = [
-    path('', views.titlePage, name='titlepage'),
-    path('uploadfile/', views.uploadFile, name='uploadfile'),
-    path('upload/', views.upload_csv, name='upload'),
-    path('uploadsuccess/', views.uploadSuccess, name='uploadsuccess'),
+    path(r'', views.titlePage, name='titlepage'),
+    path(r'uploadfile/', views.uploadFile, name='uploadfile'),
+    path(r'upload/', views.upload_csv, name='upload'),
+    path(r'uploadsuccess/', views.uploadSuccess, name='uploadsuccess'),
 ]
