@@ -5,4 +5,5 @@ class CSV_FILE(models.Model):
     prep_times = models.TextField()
     locations = models.TextField()
 
+
 # Create your models here.

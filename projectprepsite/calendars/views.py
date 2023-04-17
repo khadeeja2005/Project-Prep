@@ -8,6 +8,7 @@ from django import forms
 from calendars.forms import EventsForm
 from calendars.models import CSV_FILE
 from calendars.forms import CSV_FILE_FORM
+from calendars.forms import ADDITIONAL_INFO
 
 # Create your views here.
 def titlePage(request):
@@ -32,3 +33,14 @@ def handle_uploaded_file(f):
             destination.write(chunk)
 def uploadSuccess(request):
     return render(request, 'calendars/uploadsuccess.html')
+def additionalForm(request):
+    form = ADDITIONAL_INFO()
+    if request.method == "POST":
+        value = ADDITIONAL_INFO(request.POST)
+        if value.is_valid():
+            print("Semester Type: ",value.cleaned_data['sem_type'])
+            print("Date Started: ",value.cleaned_data['start_date'])
+            print("Date Ended: ",value.cleaned_data['end_date'])
+            print("School Board: ",value.cleaned_data['school_board'])
+    return render(request,'calendars/additionalform.html', {"form": form})
+

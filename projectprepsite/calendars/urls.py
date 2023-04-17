@@ -8,4 +8,5 @@ urlpatterns = [
     path(r'uploadfile/', views.uploadFile, name='uploadfile'),
     path(r'upload/', views.upload_csv, name='upload'),
     path(r'uploadsuccess/', views.uploadSuccess, name='uploadsuccess'),
+    path(r'additionalform/', views.additionalForm, name='additionalform'),
 ]
