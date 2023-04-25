@@ -43,6 +43,9 @@ def additionalForm(request):
             print("Date Started: ",value.cleaned_data['start_date'])
             print("Date Ended: ",value.cleaned_data['end_date'])
             print("School Board: ",value.cleaned_data['school_board'])
+            return render(request, 'calendars/supervisionscheduledisplay.html')
     context = {"form": value}
     return render(request,'calendars/additionalform.html', context)
+def supervisionscheduledisplay(request):
+    return render(request, 'calendars/supervisionscheduledisplay.html')
 

@@ -16,6 +16,67 @@
         padding: 10px;
         font-weight: 900;
     }
+    form {
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #dce8ff;
+  border: 4px solid dodgerblue;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  color: dodgerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  align-content: center;
+}
+.button {
+    display: inline-block;
+    border: none;
+    color: #4285f4;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 24px;
+    margin: 15px 4px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+    transform: translateX(180%);
+  }
+  .button {background-color: #a4c2f4ff; border:2px solid #1c4587}
+  .button:hover {background-color: rgb(214, 226, 247)}
+
+  .container {
+  display: flex;
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+  align-self: center;
+}
+
+.vertical-center {
+  margin: 4px 2px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(200%);
+}
+.horizontal-center {
+  top: 100%;
+  position: absolute;
+  -ms-transform: translateX(-50%);
+  transform: translateX(275%);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80;
+  border: none;
+}
 
 
 
@@ -33,10 +94,10 @@
     </h1>
   </header>
 
-  <div>
     <form method="POST">
       {% csrf_token %}
       {{form}}
-    <input type="submit" class="btnbtn-primary" value="submit">
+    <center>
+    <input type="submit" class="button button1" value="SUBMIT">
+  </center>
 </form>
-</div>
