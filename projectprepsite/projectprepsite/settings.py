@@ -127,3 +127,7 @@ FILE_UPLOAD_HANDLERS = [
     'django.core.files.uploadhandler.MemoryFileUploadHandler',
     'django.core.files.uploadhandler.TemporaryFileUploadHandler',
 ]
+
+STATICFILES_DIRS = [
+    'C:/Users/DELL/Documents/Github/Project-Prep/projectprepsite/calendars'
+]
