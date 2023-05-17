@@ -21,14 +21,73 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
   }
+  .table-absolute{
+	position: absolute;
+	top: 78%;
+	right: 26%;
+  }
+  .image{
+	position: absolute;
+	top: 59%;
+	right: 60%;
+  }
+  .image2{
+	position: absolute;
+	top: 59%;
+	right: 40%;
+	-webkit-transform: scaleX(-1);
+  	transform: scaleX(-1);
+  }
   body {
 	background-color: #dce8ff
+  }
+  .button1-absolute {
+	position: absolute;
+	top: 76%;
+	right: 68%;
+  }
+  .button2-absolute {
+	position: absolute;
+	top: 85.5%;
+	right: 68%;
+  }
+  .button3-absolute {
+	position: absolute;
+	top: 95%;
+	right: 68%;
+  }
+  .button4-absolute {
+	position: absolute;
+	top: 104.5%;
+	right: 68%;
+  }
+  .button5-absolute {
+	position: absolute;
+	top: 114%;
+	right: 68%;
   }
   .button {
 	cursor: pointer;
   }
+  .button2 {
+    display: inline-block;
+    border: 2px solid #3c78d8;
+    color: #4285f4;
+    padding: 8px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    margin: 15px 4px;
+    cursor: pointer;
+	background-color: #a4c2f4ff;
+    transition-duration: 0.4s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+  }
+  .button2:hover {background-color: rgb(214, 226, 247)}
 	</style>
 </head>
+<!-- for padding the order goes: top, right, bottom, left -->
 
 
 <header>
@@ -48,12 +107,67 @@
 	<!-- cellspacing is used to specify the
 		space between the cell and its contents -->
 
-	<input align="left" type="image" src="{% static 'BlueArrowBig.png' %}" value=""" width="100" height="100">
+	<div class="image">
+		<input type="image" src="{% static 'BlueArrowBig.png' %}" value=""" width="25" height="25">
+	</div>
+
+	<div class="image2">
+		<input type="image" src="{% static 'BlueArrowBig.png' %}" value=""" width="25" height="25">
+	</div>
+
+	<div class="button1-absolute">
+		<input type="button" value="VIEW WEEK" class="button2">
+	</div>
+
+	<div class="button2-absolute">
+		<input type="button" value="VIEW WEEK" class="button2">
+	</div>
+
+	<div class="button3-absolute">
+		<input type="button" value="VIEW WEEK" class="button2">
+	</div>
+
+	<div class="button4-absolute">
+		<input type="button" value="VIEW WEEK" class="button2">
+	</div>
+
+	<div class="button5-absolute">
+		<input type="button" value="VIEW WEEK" class="button2">
+	</div>
 
 	<h2 align="center" style="color: black; border: black;">
 		January 2023
 	</h2>
-	<br />
+
+	<div class="table-absolute">
+	<table bgcolor="lightgrey"
+		cellspacing="21" cellpadding="21" >
+	
+		<caption align="top">
+		</caption>
+
+		<tbody>
+			<tr>
+				<th style="color: black; background: #a4c2f4ff;">
+				Day 1</th>
+			</tr>
+			<tr>
+				<th style="color: black; background: #6fa8dcff;">
+				Day 2</th>
+			</tr>
+			<tr>
+				<th style="color: black; background: #3d85c6ff;">
+				Day 3</th>
+			</tr>
+			<tr>
+				<th style="color: white; background: #073763ff;">
+				Day 4</th>
+			</tr>
+		</tbody>
+	
+	
+	</table>
+	</div>
 
 	<table bgcolor="lightgrey" align="center"
 		cellspacing="21" cellpadding="21">
