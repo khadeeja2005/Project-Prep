@@ -48,4 +48,6 @@ def additionalForm(request):
     return render(request,'calendars/additionalform.html', context)
 def supervisionscheduledisplay(request):
     return render(request, 'calendars/supervisionscheduledisplay.html')
+def weekdisplay(request):
+    return render(request, 'calendars/weekdisplay.html')
 

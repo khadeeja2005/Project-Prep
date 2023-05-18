@@ -10,4 +10,5 @@ urlpatterns = [
     path(r'uploadsuccess/', views.uploadSuccess, name='uploadsuccess'),
     path(r'additionalform/', views.additionalForm, name='additionalform'),
     path(r'supervisionscheduledisplay', views.supervisionscheduledisplay, name='supervisonscheduledisplay'),
+    path(r'weekdisplay', views.weekdisplay, name='weekdisplay'),
 ]

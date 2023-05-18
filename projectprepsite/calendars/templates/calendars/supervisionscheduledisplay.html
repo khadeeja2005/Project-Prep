@@ -23,17 +23,17 @@
   }
   .table-absolute{
 	position: absolute;
-	top: 78%;
-	right: 26%;
+	top: 93%;
+	right: 21%;
   }
   .image{
 	position: absolute;
-	top: 59%;
+	top: 66%;
 	right: 60%;
   }
   .image2{
 	position: absolute;
-	top: 59%;
+	top: 66%;
 	right: 40%;
 	-webkit-transform: scaleX(-1);
   	transform: scaleX(-1);
@@ -43,28 +43,28 @@
   }
   .button1-absolute {
 	position: absolute;
-	top: 76%;
-	right: 68%;
+	top: 85%;
+	right: 72%;
   }
   .button2-absolute {
 	position: absolute;
-	top: 85.5%;
-	right: 68%;
+	top: 98.5%;
+	right: 72%;
   }
   .button3-absolute {
 	position: absolute;
-	top: 95%;
-	right: 68%;
+	top: 112%;
+	right: 72%;
   }
   .button4-absolute {
 	position: absolute;
-	top: 104.5%;
-	right: 68%;
+	top: 125.5%;
+	right: 72%;
   }
   .button5-absolute {
 	position: absolute;
-	top: 114%;
-	right: 68%;
+	top: 139%;
+	right: 72%;
   }
   .button {
 	cursor: pointer;
@@ -84,7 +84,58 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 5px;
   }
+  .button3 {
+    display: inline-block;
+    border: 2px solid #3c78d8;
+    color: black;
+    padding: 10px 18px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+	background-color: #a4c2f4ff;
+    transition-duration: 0.4s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+  }
+  .button-disabled {
+	display: inline-block;
+    border: 2px solid #3c78d8;
+    color: #a4c2f4;
+    padding: 8px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+	margin: 15px 4px;
+	background-color: #c9daf8ff;
+    transition-duration: 0.4s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+  }
+  .button-date-disabled {
+	display: inline-block;
+    border: 2px solid #3c78d8;
+    color: #a4c2f4;
+    padding: 10px 18px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+	background-color: #c9daf8ff;
+    transition-duration: 0.4s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+  }
+  
+  .bodytext {
+	background-color: #dce8ff;
+    padding: 10px;
+    text-align: center;
+    font-size: 20;
+    color: dodgerblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
   .button2:hover {background-color: rgb(214, 226, 247)}
+  .button3:hover {background-color: rgb(214, 226, 247)}
 	</style>
 </head>
 <!-- for padding the order goes: top, right, bottom, left -->
@@ -97,6 +148,9 @@
 </header>
 
 <body>
+	<div class="bodytext">
+		Click on the day you would like to view or edit.
+	</div>
 	<!-- Here we are using attributes like
 		cellspacing and cellpadding -->
 
@@ -116,23 +170,23 @@
 	</div>
 
 	<div class="button1-absolute">
-		<input type="button" value="VIEW WEEK" class="button2">
+		<input type="button" value="VIEW WEEK" class="button-disabled">
 	</div>
 
 	<div class="button2-absolute">
-		<input type="button" value="VIEW WEEK" class="button2">
+		<input type="button" value="VIEW WEEK" class="button2" onclick="window.location='http://127.0.0.1:8000/calendars/weekdisplay'">
 	</div>
 
 	<div class="button3-absolute">
-		<input type="button" value="VIEW WEEK" class="button2">
+		<input type="button" value="VIEW WEEK" class="button2" onclick="window.location='http://127.0.0.1:8000/calendars/weekdisplay'">
 	</div>
 
 	<div class="button4-absolute">
-		<input type="button" value="VIEW WEEK" class="button2">
+		<input type="button" value="VIEW WEEK" class="button2" onclick="window.location='http://127.0.0.1:8000/calendars/weekdisplay'">
 	</div>
 
 	<div class="button5-absolute">
-		<input type="button" value="VIEW WEEK" class="button2">
+		<input type="button" value="VIEW WEEK" class="button2" onclick="window.location='http://127.0.0.1:8000/calendars/weekdisplay'">
 	</div>
 
 	<h2 align="center" style="color: black; border: black;">
@@ -211,37 +265,37 @@
 
 		<tbody>
 			<tr>
-				<td style="color: black; background: #78909cff">2</td>
-				<td style="color: black; background: #78909cff">3</td>
-        		<td style="color: black; background: #78909cff">4</td>
-        		<td style="color: black; background: #78909cff">5</td>
-        		<td style="color: black; background: #78909cff">6</td>
+				<td style="color: black; background: #78909cff"><input type="button" value="2" class="button-date-disabled"></td>
+				<td style="color: black; background: #78909cff"><input type="button" value="3" class="button-date-disabled"></td>
+        		<td style="color: black; background: #78909cff"><input type="button" value="4" class="button-date-disabled"></td>
+        		<td style="color: black; background: #78909cff"><input type="button" value="5" class="button-date-disabled"></td>
+        		<td style="color: black; background: #78909cff"><input type="button" value="6" class="button-date-disabled"></td>
 			</tr>
 			<tr></tr>
 			<tr>
-				<td style="color: black; background: #a4c2f4ff">9</td>
-				<td style="color: black; background: #6fa8dcff">10</td>
-				<td style="color: black; background: #3d85c6ff">11</td>
-				<td style="color: white; background: #073763ff">12</td>
-				<td style="color: black; background: #a4c2f4ff">13</td>
+				<td style="color: black; background: #a4c2f4ff"><input type="button" value="9" class="button3"></td>
+				<td style="color: black; background: #6fa8dcff"><input type="button" value="10" class="button3"></td>
+				<td style="color: black; background: #3d85c6ff"><input type="button" value="11" class="button3"></td>
+				<td style="color: white; background: #073763ff"><input type="button" value="12" class="button3"></td>
+				<td style="color: black; background: #a4c2f4ff"><input type="button" value="13" class="button3"></td>
 			</tr>
 			<tr>
-				<td style="color: black; background: #6fa8dcff">16</td>
-				<td style="color: black; background: #3d85c6ff">17</td>
-				<td style="color: white; background: #073763ff">18</td>
-				<td style="color: black; background: #a4c2f4ff">19</td>
-				<td style="color: black; background: #6fa8dcff">20</td>
+				<td style="color: black; background: #6fa8dcff"><input type="button" value="16" class="button3"></td>
+				<td style="color: black; background: #3d85c6ff"><input type="button" value="17" class="button3"></td>
+				<td style="color: white; background: #073763ff"><input type="button" value="18" class="button3"></td>
+				<td style="color: black; background: #a4c2f4ff"><input type="button" value="19" class="button3"></td>
+				<td style="color: black; background: #6fa8dcff"><input type="button" value="20" class="button3"></td>
 			</tr>
 			<tr>
-				<td style="color: black; background: #3d85c6ff">23</td>
-				<td style="color: white; background: #073763ff">24</td>
-				<td style="color: black; background: #a4c2f4ff">25</td>
-				<td style="color: black; background: #6fa8dcff">26</td>
-				<td style="color: black; background: #3d85c6ff">27</td>
+				<td style="color: black; background: #3d85c6ff"><input type="button" value="23" class="button3"></td>
+				<td style="color: white; background: #073763ff"><input type="button" value="24" class="button3"></td>
+				<td style="color: black; background: #a4c2f4ff"><input type="button" value="25" class="button3"></td>
+				<td style="color: black; background: #6fa8dcff"><input type="button" value="26" class="button3"></td>
+				<td style="color: black; background: #3d85c6ff"><input type="button" value="27" class="button3"></td>
 			</tr>
 			<tr>
-				<td style="color: white; background: #073763ff">30</td>
-				<td style="color: black; background: #78909cff">31</td>
+				<td style="color: white; background: #073763ff"><input type="button" value="30" class="button3"></td>
+				<td style="color: black; background: #78909cff"><input type="button" value="31" class="button-date-disabled"></td>
 				<td></td>
 				<td></td>
 				<td></td>
