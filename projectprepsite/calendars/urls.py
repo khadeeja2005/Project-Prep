@@ -9,6 +9,7 @@ urlpatterns = [
     path(r'upload/', views.upload_csv, name='upload'),
     path(r'uploadsuccess/', views.uploadSuccess, name='uploadsuccess'),
     path(r'additionalform/', views.additionalForm, name='additionalform'),
-    path(r'supervisionscheduledisplay', views.supervisionscheduledisplay, name='supervisonscheduledisplay'),
+    path(r'supervisionscheduledisplay', views.supervisionscheduledisplay, name='supervisionscheduledisplay'),
     path(r'weekdisplay', views.weekdisplay, name='weekdisplay'),
+    path(r'daydisplay', views.daydisplay, name='daydisplay'),
 ]

@@ -50,4 +50,6 @@ def supervisionscheduledisplay(request):
     return render(request, 'calendars/supervisionscheduledisplay.html')
 def weekdisplay(request):
     return render(request, 'calendars/weekdisplay.html')
+def daydisplay(request):
+    return render(request, 'calendars/daydisplay.html')
 
