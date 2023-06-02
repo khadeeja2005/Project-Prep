@@ -3,6 +3,7 @@ from . import views
 
 app_name = "calendars"
 
+# Declaring URL paths for navigation
 urlpatterns = [
     path(r'', views.titlePage, name='titlepage'),
     path(r'uploadfile/', views.uploadFile, name='uploadfile'),

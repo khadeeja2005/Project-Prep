@@ -5,7 +5,6 @@ from django.urls import reverse
 import logging
 from django.contrib import messages
 from django import forms
-from calendars.forms import EventsForm
 from calendars.models import CSV_FILE
 from calendars.forms import CSV_FILE_FORM
 from calendars.forms import ADDITIONAL_INFO
