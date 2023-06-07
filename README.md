@@ -1,6 +1,8 @@
 # Project-Prep
 Project Prep is a scheduling website which allows users to submit their data and let an algorithm produce a schedule
+
 Authors: Eddy Wang and Khadeeja Rizwan
+
 Version: 1.0 (Last Updated: 6/5/2023)
 
 # Features
