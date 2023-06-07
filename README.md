@@ -12,7 +12,7 @@ Version: 1.0 (Last Updated: 6/5/2023)
 
 # Installation
 go to website at IP address of: xxxxxxxxx to begin using the site
-#Known Bugs
+# Known Bugs
 - uploaded CSV file can not be saved, this calendar shown is inaccurate
     - need to go to another program to display and find schedule
 
