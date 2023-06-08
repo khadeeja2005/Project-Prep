@@ -1,22 +1,24 @@
 # Project-Prep
-Project Prep is a scheduling website which allows users to submit their data and let an algorithm produce a schedule
-
 Authors: Eddy Wang and Khadeeja Rizwan
 
 Version: 1.0 (Last Updated: 6/5/2023)
+
+Project Prep is a scheduling website which allows users to submit their data and let an algorithm produce a schedule
 
 # Features
 - allows user to input data through a CSV file
 - user can add more parameters for a more specific schedule
 - algorithm which creates a possible schedule
 - produces a calendar with the schedule
-    - ability to toggle between months and has a monthly, weekly, and daily view
+    - ability to toggle between months and has a monthly, weekly, and daily view of the schedule
 
 # Installation
-go to website at IP address of: xxxxxxxxx to begin using the site
+Django must be installed before using (pip install Django)
+
 # Known Bugs
 - uploaded CSV file can not be saved, this calendar shown is inaccurate
-    - need to go to another program to display and find schedule
+    - if accurate schedule is wanted to be received must manually input file to the file-reading-algorithm.py program
+- the buttons displayed on the calendar view are unable to be used/manipulated
 
 # Support
 email ocdsb@ocdsb.ca for any inquiries
