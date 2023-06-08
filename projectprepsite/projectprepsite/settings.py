@@ -1,3 +1,8 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: April 7, 2023
+'''
 """
 Django settings for projectprepsite project.
 

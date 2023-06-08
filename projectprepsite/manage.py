@@ -1,3 +1,8 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: February 7, 2023
+'''
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os

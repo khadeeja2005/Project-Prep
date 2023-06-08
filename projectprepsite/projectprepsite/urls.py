@@ -1,3 +1,9 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: February 7, 2023
+'''
+
 """projectprepsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

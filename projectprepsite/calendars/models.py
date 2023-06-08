@@ -1,3 +1,8 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: June 1, 2023
+'''
 from django.db import models
 
 # Choices for semester types for the Additional Information form

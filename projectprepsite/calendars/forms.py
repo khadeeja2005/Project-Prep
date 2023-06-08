@@ -1,3 +1,10 @@
+'''
+Version 1.0
+Authors: Eddy Wang
+Last Updated: June 1, 2023
+'''
+
+#import statements
 from django import forms
 from calendars.models import CSV_FILE
 from calendars.models import additional_info_models

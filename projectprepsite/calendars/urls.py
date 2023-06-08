@@ -1,3 +1,10 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: June 1, 2023
+'''
+
+#import statements
 from django.urls import path
 from . import views
 

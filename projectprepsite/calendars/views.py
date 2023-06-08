@@ -1,3 +1,8 @@
+'''
+Version 1.0
+Authors: Khadeeja Rizwan and Eddy Wang
+Last Updated: June 4, 2023
+'''
 #import statements
 from django.shortcuts import render
 from django.template import loader
