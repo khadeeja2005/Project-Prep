@@ -1,3 +1,8 @@
+'''
+Version 1.0
+Khadeeja Rizwan
+June 7, 2023
+'''
 #import statements
 import csv
 import calendar
@@ -47,13 +52,17 @@ def findLocation(mini_schedule, date, locations, x):
   #randomly picks location
   new_location = random.sample(locations, 1)[0]
   #if the date has multiple locations need to check same location isnt being reused
+  location = []
   if len(temp) >= 1:
-    location = []
     for i in temp:
       location.append(i[1])
-    #checks if randomly picked location is the same as the current location
-    while new_location in location:
+   #checks if there are more people than locations, then chooses a random location
+    if len(locations) <= len(temp):
       new_location = random.sample(locations, 1)[0]
+    else:
+       #checks if randomly picked location is the same as the current location
+      while new_location in location:
+        new_location = random.sample(locations, 1)[0]
   return new_location
 
   
@@ -81,6 +90,7 @@ def createSchedule(data, locations):
         loc = findLocation(mini_schedule, 'day '+ str(j + 1), locations, x)
         mini_schedule['day ' + str(j + 1)].append([i, loc])
     
+    #only needs to be added in 2/4 days of the schedule
     elif x[0] == 0.5:
       num = 1
       days = 0
@@ -104,23 +114,24 @@ def createSchedule(data, locations):
           day += 1
         days += 1
     
-    elif x[0] < 0.3:
+    #only needs to be added in 1/4 days of the schedule
+    elif x[0] <= 0.3:
       chosen = 0
       while chosen != 1:
         for j in range(4):
-          #checks if 
-          if len(mini_schedule['day ' + str(j + 1)]) == 0:
-            print('a')
-            loc = findLocation(mini_schedule, 'day ' + str(j + 1), locations, x)
-            mini_schedule['day ' + str(j + 1)].append([i, loc])
-            chosen = 1
-          elif len(mini_schedule['day ' + str(j + 1)]) < len(locations):
-            print('b')
-            loc = findLocation(mini_schedule, 'day ' + str(j + 1), locations, x)
-            mini_schedule['day ' + str(j + 1)].append([i, loc])
-            chosen = 1
+          #checks if there are no people in that day, to automatically add (first choice)
+          if chosen != 1:
+            if len(mini_schedule['day ' + str(j + 1)]) == 0:
+              loc = findLocation(mini_schedule, 'day ' + str(j + 1), locations, x)
+              mini_schedule['day ' + str(j + 1)].append([i, loc])
+              chosen = 1
+            #checks if there are unfilled schedules (second choice)
+            elif len(mini_schedule['day ' + str(j + 1)]) < len(locations):
+              loc = findLocation(mini_schedule, 'day ' + str(j + 1), locations, x)
+              mini_schedule['day ' + str(j + 1)].append([i, loc])
+              chosen = 1
+        #if none of the previous options were viable randomly picks a day to add the person
         if chosen != 1:
-          print('c')
           day = random.randint(1, 4)
           loc = findLocation(mini_schedule, 'day ' + str(day), locations, x)
           mini_schedule['day ' + str(day)].append([i, loc])
