@@ -33,4 +33,4 @@ email ocdsb@ocdsb.ca for any inquiries
 | [5] J. P. Quinn, “Text properties,” The Web Design Group, https://www.htmlhelp.com/reference/css/text/ (accessed May 28, 2023). | To create text in HTML. |
 | [6] “How to upload and process the CSV file in Django,” Python Circle, https://pythoncircle.com/post/30/how-to-upload-and-process-the-csv-file-in-django/ (accessed May 28, 2023). | For user to upload a CSV file from our website |
 | [7] Vitorfs, “How to upload files with Django,” Simple is Better Than Complex, https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html (accessed May 28, 2023). | To upload a csv file |
-| [1] “Design a calendar using HTML and CSS,” GeeksforGeeks, https://www.geeksforgeeks.org/design-a-calendar-using-html-and-css/ (accessed May 28, 2023). | To build a calendar template using HTML and CSS |
+| [8] “Design a calendar using HTML and CSS,” GeeksforGeeks, https://www.geeksforgeeks.org/design-a-calendar-using-html-and-css/ (accessed May 28, 2023). | To build a calendar template using HTML and CSS |
