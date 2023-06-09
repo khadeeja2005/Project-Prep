@@ -23,7 +23,6 @@ def readData(file_name):
   #reading files
   csv_file = open(file_name)
   csv_reader = csv.DictReader(csv_file)
-  csv_file.close()
   line_count = 0
   data = {}
   locations = set()
@@ -34,6 +33,7 @@ def readData(file_name):
     #checks if row has a location then adds to set
     if row['locations'] != None:
       locations.add(row['locations'])
+  csv_file.close()
   return data, locations
 
 def findLocation(mini_schedule, date, locations, x):
@@ -189,4 +189,3 @@ delta = d1 - d0
 data, locations = readData('practice.csv')
 sched = (createSchedule(data, locations))
 writeData(sched)
-
